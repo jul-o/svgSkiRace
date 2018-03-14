@@ -1,0 +1,28 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type="text/css" href="handson.css" ?>
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="500" viewBox="0 0 750 2000" xmlns:xlink="http://www.w3.org/1999/xlink" >
+
+<g id="snow">
+  <rect width="750" height="500" fill="rgb(233,231,231)" />
+</g>
+
+
+<g id="sky"> 
+  <rect width="750" height="150" fill="url(#skyColor)" />
+</g>
+
+
+<linearGradient id="skyColor" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(0,93,215);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(96,161,245);stop-opacity:1" />
+</linearGradient>
+
+
+<g id="curves">
+  <path d="M200 150 Q 150 200, 250 300 T 200 600 200 900 200 1200 200 1600 200 2000" fill="none" stroke="red" stroke-width="1"/>
+  <path d="M600 150 Q 550 200, 650 300 T 600 600 600 900 600 1200 600 1600 600 2000" fill="none" stroke="red" stroke-width="1"/>
+</g>
+
+<use xlink:href="#curves" x="0" y="0"/>
+
+</svg>
