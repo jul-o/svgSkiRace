@@ -1,0 +1,18 @@
+<svg height="500" width="750" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <g id="sapin">
+      <rect fill="#643c07" height="55" width="23" x="407" y="223"/>
+      <path d="M405 150c-41 92-147 132.8-41 92 105-40.9 176 14.2 176 14.2" fill="#316308"/>
+      <path d="M426 92c-25 59 96 125.2 24 98s-209 102.7-131 34.9 100-112.9 100-112.9l-5 10" fill="#3d7b09"/>
+      <path d="M414 80c-55 123-23 47 6 51 37 16 71 55 37 17-34-41-43-69-43-69" fill="#48930b"/>
+    </g>
+  </defs>
+  <use xlink:href="#sapin"/>
+  <use transform="translate(50 -10)" xlink:href="#sapin"/>
+  <use transform="translate(-75 10)" xlink:href="#sapin"/>
+  <use transform="translate(270 20)" xlink:href="#sapin"/>
+  <use transform="translate(-120 30)" xlink:href="#sapin"/>
+  <use transform="translate(150 40)" xlink:href="#sapin"/>
+  <use transform="translate(-50 70)" xlink:href="#sapin"/>
+  <use transform="scale(1.25 1.5)" xlink:href="#sapin"/>
+</svg>
