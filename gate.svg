@@ -1,0 +1,21 @@
+<svg height="500" width="750" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <g id="gate">
+        <rect x="0" y="0" width="5" height="80"/>
+        <rect x="45" y="0" width="5" height="80"/>
+        <rect id="flag" x="0" y="0" width="50" height="35"/>
+        
+
+        <rect id="temp" fill="#210b00" height="300" width="20" x="1000" y="0"/>
+    </g>
+
+    <g id="blue_gate" fill="blue">
+        <use xlink:href="#gate"/>
+    </g>
+
+    <g id="red_gate" fill="red">
+        <use xlink:href="#gate"/>
+    </g>
+  </defs>
+  <use xlink:href="#red_gate"/>
+</svg>

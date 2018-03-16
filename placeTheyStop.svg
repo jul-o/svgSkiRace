@@ -1,0 +1,168 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type="text/css" href="handson.css" ?>
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="500" viewBox="0 0 750 500" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<rect class="background" x="0" y="0" width="750" height="500"  />
+
+
+<!-- draw background grid -->
+<path class="thin" style="stroke-opacity:0.2" d="M0,0
+h750v10h-750v10h750v10h-750v10
+h750v10h-750v10h750v10h-750v10
+h750v10h-750v10h750v10h-750v10
+h750v10h-750v10h750v10h-750v10
+h750v10h-750v10h750v10h-750v10
+h750v10h-750v10h750v10h-750v10
+h750v10h-750v10h750v10h-750v10
+h750v10h-750v10h750v10h-750v10
+h750v10h-750v10h750v10h-750v10
+h750v10h-750v10h750v10h-750v10
+h750v10h-750v10h750v10h-750v10
+h750v10h-750v10h750v10h-750v10
+h750v10h-750v10
+h750v-500h-750v500
+h10v-500h10v500h10v-500h10v500
+h10v-500h10v500h10v-500h10v500
+h10v-500h10v500h10v-500h10v500
+h10v-500h10v500h10v-500h10v500
+h10v-500h10v500h10v-500h10v500
+h10v-500h10v500h10v-500h10v500
+h10v-500h10v500h10v-500h10v500
+h10v-500h10v500h10v-500h10v500
+h10v-500h10v500h10v-500h10v500
+h10v-500h10v500h10v-500h10v500
+h10v-500h10v500h10v-500h10v500
+h10v-500h10v500h10v-500h10v500
+h10v-500h10v500h10v-500h10v500
+h10v-500h10v500h10v-500h10v500
+h10v-500h10v500h10v-500h10v500
+h10v-500h10v500h10v-500h10v500
+h10v-500h10v500h10v-500h10v500
+h10v-500h10v500h10v-500h10v500
+h10v-500h10v500" />
+<path class="outline" style="stroke-opacity:0.2" d="M0,0
+h750v50h-750v50h750v50h-750v50
+h750v50h-750v50h750v50h-750v50
+h750v50h-750v50
+h750v-500h-750v500
+h50v-500h50v500h50v-500h50v500
+h50v-500h50v500h50v-500h50v500
+h50v-500h50v500h50v-500h50v500
+h50v-500h50v500h50
+"/>
+<text x="0" style="text-anchor:middle;font-size:10px">
+<tspan x="50" y="10">50</tspan>
+<tspan x="100" y="10">100</tspan>
+<tspan x="150" y="10">150</tspan>
+<tspan x="200" y="10">200</tspan>
+<tspan x="250" y="10">250</tspan>
+<tspan x="300" y="10">300</tspan>
+<tspan x="350" y="10">350</tspan>
+<tspan x="400" y="10">400</tspan>
+<tspan x="450" y="10">450</tspan>
+<tspan x="500" y="10">500</tspan>
+<tspan x="550" y="10">550</tspan>
+<tspan x="600" y="10">600</tspan>
+<tspan x="650" y="10">650</tspan>
+<tspan x="700" y="10">700</tspan>
+</text>
+<text style="text-anchor:start;font-size:10px">
+<tspan x="730" y="53">50</tspan>
+<tspan x="730" y="103">100</tspan>
+<tspan x="730" y="153">150</tspan>
+<tspan x="730" y="203">200</tspan>
+<tspan x="730" y="253">250</tspan>
+<tspan x="730" y="303">300</tspan>
+<tspan x="730" y="353">350</tspan>
+<tspan x="730" y="403">400</tspan>
+<tspan x="730" y="453">450</tspan>
+
+</text>
+<defs>
+<!--
+  <g id="guy">
+    <ellipse ry="40" rx="10" cx="0" cy="-40" style="fill"/>
+    <circle r="25" cx="0" cy="-80" style="fill:rgb(216,171,109);stroke"/>
+  </g>
+
+  <g id="rotatingGuy">
+    <use xlink:href="#guy" x="0" y="0"/>
+    <animateTransform attributeName="transform"
+      type="rotate"
+      values="0;-20;0;20;0"
+      dur="2s"
+      repeatCount="indefinite"/>
+  </g>
+  <g id="plank">
+    <rect x="-100" y="-5" width="200" height="10" style="fill:brown"/>
+  </g>
+
+  <g id="rotatingPlankWithGuys">
+    <use xlink:href="#plank" x="0" y="0"/>
+    <use xlink:href="#rotatingGuy" x="-100" y="0" style="fill:red"/>
+    <use xlink:href="#rotatingGuy" x="100" y="0" style="fill:blue"/>
+    <animateTransform attributeName="transform"
+      type="rotate"
+      values="0;20;0;-20;0"
+      dur="2s"
+      repeatCount="indefinite"/>
+    </g>
+
+    <g id="seesaw">
+      <use xlink:href="#rotatingPlankWithGuys" x="0" y="0"/>
+      <path d="M 0 5 L -50 50 H 50 z" fill="brown"/>
+    </g>
+
+    <g id="sky">
+      <rect x="0" y="0" width="750" height="250" style="fill:rgb(38, 196, 236)">
+        <animate attributeType="CSS" attributeName="fill" values="rgb(0,128,255);rgb(0,0,0);rgb(0,128,255)" begin="0" dur="8s" repeatCount="indefinite"/>
+      </rect>
+      <circle id="sun" cx="0" cy="0" r="50" style="fill:yellow">
+        <animateMotion from="150,-50" to="150,500"
+          dur="7s" begin="0s" repeatCount="indefinite"/>
+      </circle>
+      <animate attributeType="CSS" attributeName="fill" values="rgb(0,128,255);rgb(0,0,0);rgb(0,128,255)" begin="0" dur="15s" repeatCount="indefinite"/>
+    </g>
+
+    <g id="fond">
+      <use xlink:href="#sky" x="0" y="0"/>
+      <rect x="0" y="250" width="750" height="500" style="fill:green"/>
+    </g>
+-->
+
+<g id="fir">
+  <g transform="scale(0.5)">
+    <rect id="trunk" x="-10" y="-100" width="20" height="100" style="fill:rgb(91, 62, 28)"/>
+    <path id="leafs" d="M -100 -30 H 100 L 0 -350 z" style="fill:rgb(58, 89, 25)"/>
+  </g>
+</g>
+
+<g id="backgroundFir">
+  <g transform="scale(0.1)">
+    <use xlink:href="#fir" x="0" y="0"/>
+  </g>
+</g>
+
+<g id="ground">
+  <rect x="0" y="300" width="750" height="500" style="fill:rgb(132, 108, 72)"/>
+</g>
+
+<g id="background">
+  <path id="rightMountain" d="M 550 300 L 600 100 L 700 300 z" style="fill:rgb(91, 73, 46)"/>
+
+  <path id="leftMountain" d="M 0 250 L 100 50 L 150 300 H 0 z" style="fill:rgb(91, 73, 46)"/>
+</g>
+
+
+</defs>
+
+
+<use xlink:href="#ground" x="0" y="0"/>
+<use xlink:href="#background" x="0" y="0"/>
+
+<g id="firs">
+  <use xlink:href="#fir" x="180" y="320"/>
+  <use xlink:href="#backgroundFir" x="90" y="250"/>
+
+</g>
+
+</svg>
