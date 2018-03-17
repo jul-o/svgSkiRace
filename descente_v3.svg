@@ -1,0 +1,177 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type="text/css" href="handson.css" ?>
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="500" viewBox="0 0 750 500" xmlns:xlink="http://www.w3.org/1999/xlink" >
+
+<defs>
+    <g id="gate">
+        <rect x="0" y="0" width="5" height="80"/>
+        <rect x="45" y="0" width="5" height="80"/>
+        <rect id="flag" x="0" y="0" width="50" height="35"/>
+        
+    </g>
+
+    <g id="blue_gate" fill="blue">
+        <use xlink:href="#gate"/>
+    </g>
+
+    <g id="red_gate" fill="red">
+        <use xlink:href="#gate"/>
+    </g>
+
+    <g id="body">
+        <path d="M0 0l20 30.3 2 15-2 5 5 5.1 5 25.1-60.1-.5 9.6-50-5.5 25 5.1-5-1.9-5 2.3-15" fill="#6a5acd"/>
+        <path d="M-20.9 50l40.9.3" stroke="#000" stroke-width="1"/>
+        <path d="M-30.1 80l60.1.5v5l-5 5-50.2-.5-5-5" fill="sienna"/>
+    </g>
+
+    <g id="arm">
+        <path d="M-20.5 30l-20.2 10-3 3-.3 13L-30 80l4-20-6.4-10 9.7-5" fill="purple"/>
+        <path d="M-35.8 47.5l3.3 2.5" stroke="#000" stroke-width="1"/>
+    </g>
+
+    <circle cx="0" cy="0" id="circle" r="5"/>
+    <circle cx="0" cy="0" fill="wheat" id="head" r="25"/>
+    <circle cx="0" cy="0" id="eye" r="3"/>
+    <path d="M0 0q10 10.2 20 .3" fill="none" id="mouth" stroke="#000" stroke-width="2"/>
+    
+
+    <path stroke="red" stroke-width="5" fill="transparent" >
+        <animate attributeName="d" from="M200 150 Q 150 200, 250 300 T 200 500" to="M200 150 Q 250 200, 150 300 T 200 500" id="a1" begin="0s; a2.end" dur="3s"/>
+        <animate attributeName="d" from="M200 150 Q 250 200, 150 300 T 200 500" to="M200 150 Q 150 200, 250 300 T 200 500" id="a2" begin="a1.end;" dur="3s"/>
+    </path>
+
+    <g id="cap">
+        <circle cx="20" cy="-25" fill="red" r="6"/>
+        <path d="M0 0q22.3-40 45.5.8" fill="red"/>
+        <path d="M7.2-10q15-30 31.3 0" fill="#00f"/>
+    </g>
+
+    <path d="M0 0l-30.3 20h25L10 .2" fill="maroon" id="ski"/>
+
+    <g id="house_shape">
+        <rect height="100" id="building" width="140" x="0" y="99" fill="#4C2100"/>
+        <path d="M0 100 L70 0l70 100z" id="roof" style="stroke:none" fill="#442800"/>
+    </g>
+    <g id="house">
+        <rect fill="#616161" height="64" width="28" x="94" y="12"/>
+        <use xlink:href="#house_shape"/>
+        <rect fill="#00969e" height="30" width="35" x="13" y="112"/>
+        <rect fill="#00969e" height="30" width="35" x="87" y="112"/>
+        <rect fill="#290000" height="33" width="32" x="58" y="166"/>
+    </g>
+
+    <g id="skier">
+        <use xlink:href="#body"/>
+        <use xlink:href="#arm"/>
+        <use xlink:href="#circle" transform="translate(-30 70)"/>
+        <use xlink:href="#arm" transform="scale(-1 1)"/>
+        <use xlink:href="#circle" transform="translate(30 70)"/>
+        <use xlink:href="#head"/>
+        <use xlink:href="#eye" transform="translate(-10)" />
+        <use xlink:href="#eye" transform="translate(10)"/>
+        <use xlink:href="#mouth" transform="translate(-10 10)"/>
+        <use xlink:href="#cap" transform="translate(-23 -10)"/>
+        <use xlink:href="#ski" transform="translate(-20 90)"/>
+        <use xlink:href="#ski" transform="matrix(-1 0 0 1 20 90)"/>
+    </g>
+
+    <g id="fir">
+        <rect fill="#643c07" height="55" width="23" x="407" y="223"/>
+        <path d="M405 150c-41 92-147 132.8-41 92 105-40.9 176 14.2 176 14.2" fill="#316308"/>
+        <path d="M426 92c-25 59 96 125.2 24 98s-209 102.7-131 34.9 100-112.9 100-112.9l-5 10" fill="#3d7b09"/>
+        <path d="M414 80c-55 123-23 47 6 51 37 16 71 55 37 17-34-41-43-69-43-69" fill="#48930b"/>
+    </g>
+
+    <g id="snow">
+        <rect width="750" height="3000" fill="rgb(233,231,231)" />
+    </g>
+
+    <g id="sky"> 
+        <rect width="750" height="150" fill="url(#skyColor)" />
+    </g>
+
+    <linearGradient id="skyColor" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:rgb(0,93,215);stop-opacity:1" />
+        <stop offset="100%" style="stop-color:rgb(96,161,245);stop-opacity:1" />
+    </linearGradient>
+
+    <g id="curves">
+        <path d="M200 150 Q 150 200, 250 300 T 200 600 200 900 200 1200 200 1600 200 2000" fill="none" stroke="red" stroke-width="1"/>
+        <path d="M600 150 Q 550 200, 650 300 T 600 600 600 900 600 1200 600 1600 600 2000" fill="none" stroke="red" stroke-width="1"/>
+    </g>
+  
+</defs>
+
+<!-- Ski Race Scene -->
+
+  <!-- background -->
+    <use xlink:href="#snow"/>
+    <use xlink:href="#sky"/>
+    <use xlink:href="#SkyColor"/>
+    <use xlink:href="#curves"/>
+  <!-- end of background -->
+
+  <!-- Skier and animation -->
+    <use xlink:href="#skier" transform="matrix(0.5 0 0 0.5 100 0)">
+        <animateMotion fill="freeze" id="descente2" dur="10s" path="M300 150 Q 250 200, 350 300 T 300 600 300 900 300 1200 300 1600 300 2000"/>  
+    </use>
+    
+    <use xlink:href="#skier" transform="matrix(0.5 0 0 0.5 50 0)">
+      <animateMotion fill="freeze" id="descente" dur="6s" path="M300 150 Q 250 200, 350 300 T 300 600 300 900 600 1050 650 1100 700 1200"/>  
+    </use>
+
+    <use xlink:href="#skier" transform="matrix(0.5 0 0 0.5 0 0)">
+        <animateMotion fill="freeze" id="descente3" dur="4s" path="M300 150 Q 250 200, 350 300 T 300 600 200 900 150 1000"/>  
+    </use>
+  <!-- end of skier and animation -->
+
+
+  <!-- firs -->
+    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 400 1000)"/>
+    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 380 1025)"/>
+    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 410 1050)"/>
+    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 420 1100)"/>
+    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 370 1100)"/>
+    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 410 1150)"/>
+    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 340 1100)"/>
+    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 350 1150)"/>
+  <!-- End of firs -->
+
+  <!-- house -->
+    <use xlink:href="#house" transform="matrix(1 0 0 1 75 900)"/>
+
+    <!-- gates -->
+    <use xlink:href="#red_gate" transform="matrix(1 0 0 1 150 100)"/>
+    <use xlink:href="#red_gate" transform="matrix(1 0 0 1 575 100)"/>
+
+    <use xlink:href="#blue_gate" transform="matrix(1 0 0 1 280 300)"/>
+    <use xlink:href="#blue_gate" transform="matrix(1 0 0 1 600 300)"/>
+
+    <use xlink:href="#red_gate" transform="matrix(1 0 0 1 220 500)"/>
+    <use xlink:href="#red_gate" transform="matrix(1 0 0 1 580 500)"/>
+
+    <use xlink:href="#blue_gate" transform="matrix(1 0 0 1 120 700)"/>
+    <use xlink:href="#blue_gate" transform="matrix(1 0 0 1 500 700)"/>
+
+    <use xlink:href="#red_gate" transform="matrix(1 0 0 1 250 900)"/>
+    <use xlink:href="#red_gate" transform="matrix(1 0 0 1 560 900)"/>
+
+    <use xlink:href="#blue_gate" transform="matrix(1 0 0 1 200 1100)"/>
+    <use xlink:href="#blue_gate" transform="matrix(1 0 0 1 560 1100)"/>
+
+    <use xlink:href="#red_gate" transform="matrix(1 0 0 1 100 1300)"/>
+    <use xlink:href="#red_gate" transform="matrix(1 0 0 1 500 1300)"/>
+
+    <use xlink:href="#blue_gate" transform="matrix(1 0 0 1 150 1500)"/>
+    <use xlink:href="#blue_gate" transform="matrix(1 0 0 1 560 1500)"/>
+
+    <use xlink:href="#red_gate" transform="matrix(1 0 0 1 250 1700)"/>
+    <use xlink:href="#red_gate" transform="matrix(1 0 0 1 600 1700)"/>
+
+    <!-- end of gates -->
+  <!-- ViewBox animation -->
+     <animate attributeName="viewBox" dur="9.5s" fill="freeze" values="0 0 750 500; 0 1750 750 500"/>
+  
+
+
+</svg>
