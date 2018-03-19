@@ -5,40 +5,29 @@
 <defs>
 
     <g id="clock">
-        <g id = "Background">
-            <g>
-                <g>
-                    <circle cx="0" cy="0" r ="240" fill="gold"/>
-                    <circle cx="0" cy="0" r ="220" fill="gainsboro"/>
-                </g>
-            </g>
-            <g>
-                <text x="-2" y="-200" font-family="Verdana" font-size="24"> 12 </text>
-                <text x="200" y="10" font-family="Verdana" font-size="24"> 3 </text>
-                <text x="-2" y="200" font-family="Verdana" font-size="24"> 6 </text>
-                <text x="-200" y="10" font-family="Verdana" font-size="24"> 9 </text>
-            </g>
+        <g id="Background">
+            <circle cx="0" cy="0" r ="240" fill="gold"/>
+            <circle cx="0" cy="0" r ="220" fill="gainsboro"/>
+            <text x="-2" y="-200" font-family="Verdana" font-size="24"> 12 </text>
+            <text x="200" y="10" font-family="Verdana" font-size="24"> 3 </text>
+            <text x="-2" y="200" font-family="Verdana" font-size="24"> 6 </text>
+            <text x="-200" y="10" font-family="Verdana" font-size="24"> 9 </text>
         </g>
-
-             <g>
-           <use xlink:href="#Background" x="0" y="0">
+        <g>
+            <use xlink:href="#Background" x="0" y="0">
                 <animateTransform  begin="descente3.end" attributeName="transform" type="rotate" values="0; -360" dur="10s" repeatDur="indefinite"/>
             </use>
-         </g>
-        <g >  <!-- transform="translate(400,250)" -->
-            <rect class="pate" x="0" y="-190" width="3" height="190" fill="red">
-                <animateTransform begin="descente3.end" attributeName="transform" type="rotate" values="0; 360 ; 250; 400 ; 0" dur="1s" repeatDur="indefinite"/>
-            </rect>
-        
-            <rect class="pate" x="-2.5" y="-200" width="5" height="200">
-                <animateTransform begin="descente3.end" attributeName="transform" type="rotate" values="0;360" dur="5s" repeatDur="indefinite"/>
-            </rect>
-
-            <rect class="pate2.0" x="-5" y="0" width="10" height="100"  >
-                <animateTransform begin="descente3.end" attributeName="transform" type="rotate" values="0; -360" dur="12s" repeatDur="indefinite"/>
-            </rect>
-            <circle cx="0" cy="0" r ="10"/>
         </g>
+        <rect class="pate" x="0" y="-190" width="3" height="190" fill="red">
+            <animateTransform begin="descente3.end" attributeName="transform" type="rotate" values="0; 360 ; 250; 400 ; 0" dur="1s" repeatDur="indefinite"/>
+        </rect>
+        <rect class="minute's needle" x="-2.5" y="-200" width="5" height="200">
+            <animateTransform begin="descente3.end" attributeName="transform" type="rotate" values="0;360" dur="5s" repeatDur="indefinite"/>
+        </rect>
+        <rect class="hour's needle" x="-5" y="0" width="10" height="100"  >
+            <animateTransform begin="descente3.end" attributeName="transform" type="rotate" values="0; -360" dur="12s" repeatDur="indefinite"/>
+        </rect>
+        <circle cx="0" cy="0" r ="10"/>
     </g>
 
     <g id="gate">
@@ -165,14 +154,19 @@
 
 
   <!-- firs -->
-    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 400 1000)"/>
-    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 380 1025)"/>
-    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 410 1050)"/>
-    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 420 1100)"/>
-    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 370 1100)"/>
-    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 410 1150)"/>
-    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 340 1100)"/>
-    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 350 1150)"/>
+    <g>
+        <g> 
+            <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 400 1000)"/>
+            <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 380 1025)"/>
+            <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 410 1050)"/>
+            <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 420 1100)"/>
+            <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 370 1100)"/>
+            <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 410 1150)"/>
+            <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 340 1100)"/>
+            <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 350 1150)"/>
+        </g>
+        <animateTransform attributeName="transform" type="skewX" values="-0.2;0;0.2;0;-0.2;0;0.2;0;-0.2;0" dur="1s" begin="descente.end"/>
+    </g>
   <!-- End of firs -->
 
   <!-- house -->
