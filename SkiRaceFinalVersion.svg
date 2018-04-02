@@ -1,0 +1,415 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type="text/css" href="handson.css" ?>
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="500" viewBox="0 0 750 500" xmlns:xlink="http://www.w3.org/1999/xlink" >
+
+<defs>
+    <g id="elementsScene1">
+        <rect id="sky" width="750" height="500" fill="url(#skyColor)"/>
+        <linearGradient id="skyColor" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:rgb(200,200,215);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(0,100,255);stop-opacity:1" />
+        </linearGradient>
+        <circle id="sun" x="0" y="0" r="45" fill="url(#SunColor)"/>
+        <linearGradient id="SunColor" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity:1" />
+        </linearGradient>
+        <g id="wheel">
+            <circle cx="0" cy="0" r="40" fill="black" />
+            <circle cx="0" cy="0" r="20" fill="grey" />
+            <ellipse cx="30" cy="0" rx="2" ry="4" fill="white"/>
+        </g>
+        <g id="autoBody">
+            <ellipse cx="204" cy="335" rx="8" ry="20" fill="yellow"/>
+            <ellipse cx="625" cy="370" rx="8" ry="20" fill="red"/>
+            <rect x="325" y="225" width="100" height="75" fill="grey" opacity="0.4"/>
+            <rect x="475" y="225" width="100" height="75" fill="grey" opacity="0.4"/>
+            <rect x="200" y="300" width="425" height="100" fill="brown"/>
+            <rect x="300" y="200" width="30" height="100" fill="brown"/>
+            <rect x="425" y="200" width="50" height="100" fill="brown"/>
+            <rect x="575" y="200" width="50" height="100" fill="brown"/>
+            <rect x="300" y="200" width="300" height="30" fill="brown"/>
+        </g>
+        <g id="antenna">
+            <line x1="0" y1="0" x2="40" y2="-50" style="stroke:rgb(0,0,0);stroke-width:3"/>
+            <animateTransform attributeName="transform" type="rotate" values="0;8;0;0;0;14;0" dur="1s" repeatCount="5"/>
+        </g>
+        <g id="car">
+            <use xlink:href="#autoBody" x="0" y="0"/>
+            <use xlink:href="#wheel" x="300" y="400"/>
+            <use xlink:href="#wheel" x="550" y="400"/>
+            <use xlink:href="#antenna" x="320" y="200"/>
+        </g>
+        <g id="HappyGuy">
+            <path id="bodyGuy" d="M 0 0 l -30 100 H30" style="fill:purple"/>
+            <circle id="headGuy" r="25" cx="0" cy="0" style="fill:wheat"/>
+            <path id="HappyMouth" d="M -10 14 Q -15 20 -20 10 z" style="fill:black"/>
+            <circle id="eye" cx="-10" cy="-5" r="2" style="fill:black"/>
+
+        </g>
+    </g>
+
+    <g id="elementsScene2">
+        <g id="tree" transform="scale(0.5)">
+            <rect x="-10" y="-100" width="20" height="100" fill="rgb(91, 62, 28)"/>
+            <path id="leafs" d="M -100 -30 H 100 L 0 -350 z" style="fill:rgb(58, 89, 25)"/>
+        </g>
+        <g id="ground">
+            <rect x="0" y="300" width="750" height="500" style="fill:rgb(132, 108, 72)"/>
+        </g>
+         <g id="background">
+            <path id="rightMountain" d="M 550 300 L 600 100 L 700 300 z" style="fill:rgb(91, 73, 46)"/>
+            <path id="leftMountain" d="M 0 250 L 100 50 L 150 300 H 0 z" style="fill:rgb(91, 73, 46)"/>
+        </g>
+         <g id="snow" opacity="0">
+            <path d="M 550 300 L 600 100 L 700 300 z" style="fill:rgb(203,201,201)"/>
+            <path d="M 0 250 L 100 50 L 150 300 H 0 z" style="fill:rgb(203,201,201)"/>
+            <rect x="0" y="300" width="750" height="500" style="fill:rgb(233,231,231)"/>
+            <animate id="snowing" fill="freeze" attributeName="opacity" begin="apparition.end" dur="3s" from="0" to="1"/>  
+        </g>
+         <g id="unHappyGuy">
+            <path id="bodyGuy" d="M 0 0 l -30 100 H30" style="fill:purple"/>
+            <use xlink:href="#headGuy"/>
+            <path id="Sadmouth" d="M -10 14 Q -10 10 -20 10 z" style="fill:black"/>
+            <use xlink:href="#eye"/>
+            <path id="eyeBrow" d="M -9 -11 L -14 -7" style="stroke:black"/>
+        </g>
+        <g id="Genius">
+            <g>
+                <path id="bodyGuy" d="M 0 0 l -30 100 H30" style="fill:blue"/>
+                <use xlink:href="#headGuy"/>
+                <use xlink:href="#eye"/>
+                <use xlink:href="#mouth"/>
+                <path fill="red" d="M30 100 Q 50 120 20 140 0 160 10 180 -10 160 -20 140 0 120 -30 100"/>
+            </g>
+            <animateMotion fill="freeze" dur="2s" path="M0 0 V-10 V0 V10 V0" repeatCount="indefinite"/>
+        </g>
+
+        <use id="driverUnHappy" xlink:href="#unHappyGuy" x="350" y="300" transform="translate(40, -40)" opacity="1">
+            <animate fill="freeze" attributeName="opacity" begin="snowing.end" dur="0.001s" from="1" to="0"/>  
+        </use>
+        <use id="driverHappy" xlink:href="#HappyGuy" x="350" y="300" opacity="0" transform="translate(40, -40)">
+            <animate fill="freeze" id="smiling" attributeName="opacity" begin="snowing.end" dur="0.001s" from="0" to="1"/>  
+        </use>
+        <use id="Fgenius" xlink:href="#Genius" opacity="0">
+            <animate fill="freeze" id="apparition" attributeName="opacity" begin="carStop.end" dur="1s" from="1" to="0"/>
+        </use>
+    </g>
+
+
+    <g id="firstScene">
+        <g>
+            <use xlink:href="#sky"/>
+            <use xlink:href="#sun" transform="translate(100, 100)"/>
+            <g>
+                <g transform="rotate(35) scale(1.5)">
+                    <use xlink:href="#HappyGuy" x="350" y="300" transform="translate(40, -40)"/>
+                    <use xlink:href="#HappyGuy" x="450" y="300" transform="translate(90,-40)"/>
+                    <use xlink:href="#car"/> 
+                </g>
+                <animateMotion id="carMouvement" fill="freeze" dur="5s" path="M750 150 L-900 -650"/>  
+            </g> 
+        </g>
+        <animate id="endFirstScene" attributeName="opacity" from="1" to="0" dur="2s" begin="carMouvement.end" fill="freeze"/>
+    </g>
+
+    <g id="SecondScene" opacity="0">
+        <g>
+            <use xlink:href="#sky"/>
+            <use xlink:href="#ground"/>
+            <use xlink:href="#background"/>
+            <use xlink:href="#snow"/>
+
+            <use xlink:href="#tree" x="180" y="320"/>
+            
+            <use xlink:href="#Fgenius" transform="matrix(-1 0 0 1 100 200)"/>  
+
+            <g>
+                <g transform="translate(800,50)">
+                    <use xlink:href="#driverUnHappy"/>
+                    <use xlink:href="#driverHappy"/>
+                    <use xlink:href="#HappyGuy" x="450" y="300" transform="translate(90,-40)"/>
+                    <use xlink:href="#car"/> 
+                </g>
+                <animateMotion id="carStop" fill="freeze" dur="4s" begin="begin2ndScene.end" path="M0 50 H-700"/>  
+            </g> 
+        </g>
+        <animate id="begin2ndScene" attributeName="opacity" from="0" to="1" dur="2s" begin="endFirstScene.end" fill="freeze"/>
+        <animate id="end2ndScene" attributeName="opacity" from="1" to="0" dur="4s" begin="smiling.end" fill="freeze"/>
+    </g>
+    
+    <g>  
+        <g id="Arrivalline">
+            <path d="M0 0 L 10 -10 H100 V-50 l10 -10 H210 V15 H310 V90 l-10 10" fill="gold"/>
+            <rect fill="yellow" x="0" y="0" width="200" height="100"/>
+            <rect fill="yellow" x="100" y="-50" width="100" height="50"/>
+            <rect fill="yellow" x="200" y="25" width="100" height="75"/>
+            <text x="47" y="47" font-family="Verdana" font-size="25"> 2 </text>
+            <text x="140" y="-15" font-family="Verdana" font-size="25"> 1 </text>
+            <text x="245" y="60" font-family="Verdana" font-size="25"> 3 </text>
+        </g>
+        <g id="clock">
+            <g id="Background">
+                <circle cx="0" cy="0" r ="240" fill="gold"/>
+                <circle cx="0" cy="0" r ="220" fill="gainsboro"/>
+                <text x="-2" y="-200" font-family="Verdana" font-size="24"> 12 </text>
+                <text x="200" y="10" font-family="Verdana" font-size="24"> 3 </text>
+                <text x="-2" y="200" font-family="Verdana" font-size="24"> 6 </text>
+                <text x="-200" y="10" font-family="Verdana" font-size="24"> 9 </text>
+            </g>
+            <g>  <!-- All the clock's animations start when the skier hit the house -->
+                <use xlink:href="#Background" x="0" y="0">
+                    <animateTransform  begin="descente3.end" attributeName="transform" type="rotate" values="0; -360" dur="10s" repeatDur="indefinite"/>
+                </use>
+            </g>
+            <rect class="pate" x="0" y="-190" width="3" height="190" fill="red">
+                <animateTransform begin="descente3.end" attributeName="transform" type="rotate" values="0; 360 ; 250; 400 ; 0" dur="1s" repeatDur="indefinite"/>
+            </rect>
+            <rect class="minute's needle" x="-2.5" y="-200" width="5" height="200">
+                <animateTransform begin="descente3.end" attributeName="transform" type="rotate" values="0;360" dur="5s" repeatDur="indefinite"/>
+            </rect>
+            <rect class="hour's needle" x="-5" y="0" width="10" height="100"  >
+                <animateTransform begin="descente3.end" attributeName="transform" type="rotate" values="0; -360" dur="12s" repeatDur="indefinite"/>
+            </rect>
+            <circle cx="0" cy="0" r ="10"/>
+        </g>
+
+        <g id="gate">
+            <rect x="0" y="0" width="5" height="80"/>
+            <rect x="45" y="0" width="5" height="80"/>
+            <rect id="flag" x="0" y="0" width="50" height="35"/>
+        </g>
+
+        <g id="blue_gate" fill="blue">
+            <use xlink:href="#gate"/>
+        </g>
+
+        <g id="red_gate" fill="red">
+            <use xlink:href="#gate"/>
+        </g>
+
+        <g id="body">
+            <path d="M0 0l20 30.3 2 15-2 5 5 5.1 5 25.1-60.1-.5 9.6-50-5.5 25 5.1-5-1.9-5 2.3-15" fill="#6a5acd"/>
+            <path d="M-20.9 50l40.9.3" stroke="#000" stroke-width="1"/>
+            <path d="M-30.1 80l60.1.5v5l-5 5-50.2-.5-5-5" fill="sienna"/>
+        </g>
+
+        <g id="arm">
+            <path d="M-20.5 30l-20.2 10-3 3-.3 13L-30 80l4-20-6.4-10 9.7-5" fill="purple"/>
+            <path d="M-35.8 47.5l3.3 2.5" stroke="#000" stroke-width="1"/>
+        </g>
+
+        <g id="brokenArm">
+            <path d="M-20.5 30l-15.2 15 V55 l5 5 h40 V50 h-20" fill="purple"/>
+            <path d="M-20.5 30 l-10.2 25 V55 l5 5 h35 l-40 -20" fill="white"/>
+            <path d="M-20.5 30 l-10.2 25 V55 l5 5 h35 l-30 -30" fill="white"/>
+            <path d="M-35.8 47.5l3.3 2.5" stroke="#000" stroke-width="1"/>
+        </g>
+
+        <circle cx="0" cy="0" id="circle" r="5"/>
+        <circle cx="0" cy="0" fill="wheat" id="head" r="25"/>
+        <circle cx="0" cy="0" id="eyeSkier" r="3"/>
+        <circle cx="0" cy="0" id="brokeneye" r="5" fill="red"/>
+        <path d="M0 0q10 10.2 20 .3" fill="none" id="mouth" stroke="#000" stroke-width="2"/>
+
+        <g id="cap">
+            <circle cx="20" cy="-25" fill="red" r="6"/>
+            <path d="M0 0q22.3-40 45.5.8" fill="red"/>
+            <path d="M7.2-10q15-30 31.3 0" fill="#00f"/>
+        </g>
+
+        <path d="M0 0l-30.3 20h25L10 .2" fill="maroon" id="ski"/>
+
+        <g id="house_shape">
+            <rect height="100" id="building" width="140" x="0" y="99" fill="#4C2100"/>
+            <path d="M0 100 L70 0l70 100z" id="roof" style="stroke:none" fill="#442800"/>
+        </g>
+
+        <g id="house">
+            <rect fill="#616161" height="64" width="28" x="94" y="12"/>
+            <use xlink:href="#house_shape"/>
+            <rect fill="#00969e" height="30" width="35" x="13" y="112"/>
+            <rect fill="#00969e" height="30" width="35" x="87" y="112"/>
+            <rect fill="#290000" height="33" width="32" x="58" y="166"/>
+        </g>
+
+        <g id="skier">
+            <use xlink:href="#body"/>
+            <use xlink:href="#arm"/>
+            <use xlink:href="#circle" transform="translate(-30 70)"/>
+            <use xlink:href="#arm" transform="scale(-1 1)"/>
+            <use xlink:href="#circle" transform="translate(30 70)"/>
+            <use xlink:href="#head"/>
+            <use xlink:href="#eyeSkier" transform="translate(-10)" />
+            <use xlink:href="#eyeSkier" transform="translate(10)"/>
+            <use xlink:href="#mouth" transform="translate(-10 10)"/>
+            <use xlink:href="#cap" transform="translate(-23 -10)"/>
+            <use xlink:href="#ski" transform="translate(-20 90)"/>
+            <use xlink:href="#ski" transform="matrix(-1 0 0 1 20 90)"/>
+        </g>
+
+         <g id="skyRace"> 
+            <rect width="750" height="150" fill="url(#skyColor)" />
+        </g>
+
+        <g id="fir">
+            <rect fill="#643c07" height="55" width="23" x="407" y="223"/>
+            <path d="M405 150c-41 92-147 132.8-41 92 105-40.9 176 14.2 176 14.2" fill="#316308"/>
+            <path d="M426 92c-25 59 96 125.2 24 98s-209 102.7-131 34.9 100-112.9 100-112.9l-5 10" fill="#3d7b09"/>
+            <path d="M414 80c-55 123-23 47 6 51 37 16 71 55 37 17-34-41-43-69-43-69" fill="#48930b"/>
+        </g>
+
+        <g id="snowPermanent">
+            <rect width="750" height="3000" fill="rgb(233,231,231)" />
+        </g>
+
+        <g id="curves">
+            <path d="M200 150 Q 150 200, 250 300 T 200 600 200 900 200 1200 200 1600 200 2000" fill="none" stroke="red" stroke-width="1"/>
+            <path d="M600 150 Q 550 200, 650 300 T 600 600 600 900 600 1200 600 1600 600 2000" fill="none" stroke="red" stroke-width="1"/>
+        </g>
+
+        <g id="FinishingLine">
+            <rect fill="lightgrey" x="0" y="0" width="400" height="80"/>
+            <g id="line">
+                <rect id="blackSquare" fill="black" x="0" y="0" width="20" height="20"/>
+                <use xlink:href="#blackSquare" transform="translate(40,0)"/>
+                <use xlink:href="#blackSquare" transform="translate(80,0)"/>
+                <use xlink:href="#blackSquare" transform="translate(120,0)"/>
+                <use xlink:href="#blackSquare" transform="translate(160,0)"/>
+                <use xlink:href="#blackSquare" transform="translate(200,0)"/>
+                <use xlink:href="#blackSquare" transform="translate(240,0)"/>
+                <use xlink:href="#blackSquare" transform="translate(280,0)"/>
+                <use xlink:href="#blackSquare" transform="translate(320,0)"/>
+                <use xlink:href="#blackSquare" transform="translate(360,0)"/>
+            </g>     
+            <use xlink:href="#line" transform="translate(20,20)"/>
+            <use xlink:href="#line" transform="translate(0,40)"/>
+            <use xlink:href="#line" transform="translate(20,60)"/>
+        </g> 
+        <g id="skierBroken" >
+            <use xlink:href="#body"/>
+            <use xlink:href="#brokenArm"/>
+            <use xlink:href="#arm" transform="scale(-1 1)"/>
+            <use xlink:href="#head"/>
+            <use xlink:href="#eyeSkier" transform="translate(-10)" />
+            <use xlink:href="#mouth" transform="matrix(1 0 0 -1 -10 15)"/>
+            <use xlink:href="#cap" transform="translate(-23 -10)"/>
+            <use xlink:href="#ski" transform="translate(-20 90)"/>
+            <use xlink:href="#ski" transform="matrix(-1 0 0 1 20 90)"/>
+        </g>
+
+        <g id="skierBroken2" >
+            <use xlink:href="#body"/>
+            <use xlink:href="#brokenArm"/>
+            <use xlink:href="#arm" transform="scale(-1 1)"/>
+            <use xlink:href="#head"/>
+            <use xlink:href="#brokeneye" transform="translate(-10)" />
+            <use xlink:href="#eyeSkier" transform="translate(-10)"/>
+            <use xlink:href="#eyeSkier" transform="translate(10)"/>
+            <use xlink:href="#mouth" transform="matrix(1 0 0 -1 -10 15)"/>
+            <use xlink:href="#cap" transform="translate(-23 -10)"/>
+            <use xlink:href="#ski" transform="translate(-20 90)"/>
+            <use xlink:href="#ski" transform="matrix(-1 0 0 1 20 90)"/>
+        </g>
+
+    </g>
+
+
+     <g id="scene1" opacity="0"> <!-- Ski Race Scene -->
+        <g>
+            <!-- background -->
+                <use xlink:href="#snowPermanent"/>
+                <use xlink:href="#skyRace"/>
+                <use xlink:href="#curves"/>
+                <use xlink:href="#FinishingLine" transform="translate(250 1920) skewX(-30)"/>
+            <!-- end of background -->
+        
+            <!-- Skier and animation -->
+            <use xlink:href="#skier" transform="matrix(0.5 0 0 0.5 100 0)"> <!-- skier who finish -->
+                <animateMotion fill="freeze" id="descente2" dur="10s" begin="end2ndScene.end" path="M300 150 Q 250 200, 350 300 T 300 600 300 900 300 1200 300 1600 300 2000"/>  
+            </use>
+            
+            <use xlink:href="#skier" transform="matrix(0.5 0 0 0.5 50 0)"> <!-- skier who go to the forest -->
+            <animateMotion fill="freeze" id="descente" dur="6s" begin="end2ndScene.end" path="M300 150 Q 250 200, 350 300 T 300 600 300 900 600 1050 650 1100 700 1200"/>  
+            </use>
+
+            <use xlink:href="#skier" transform="matrix(0.5 0 0 0.5 0 0)">  <!-- skier who go home -->
+                <animateMotion fill="freeze" id="descente3" dur="4s" begin="end2ndScene.end"  path="M300 150 Q 250 200, 350 300 T 300 600 200 900 150 1000"/>  
+            </use>
+
+            <!-- firs -->
+            <g>
+                <g> 
+                    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 400 1000)"/>
+                    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 380 1025)"/>
+                    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 410 1050)"/>
+                    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 420 1100)"/>
+                    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 370 1100)"/>
+                    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 410 1150)"/>
+                    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 340 1100)"/>
+                    <use xlink:href="#fir" transform="matrix(0.75 0 0 0.75 350 1150)"/>
+                </g>
+                <animateTransform attributeName="transform" type="skewX" values="-0.2;0;0.2;0;-0.2;0;0.2;0;-0.2;0" dur="1s" begin="descente.end"/>
+            </g>
+
+            <!-- house -->
+            <use xlink:href="#house" transform="matrix(1 0 0 1 75 900)"/>
+            <use xlink:href="#clock" transform="matrix(0.1 0 0 0.1 143 970)"/>
+
+            <!-- gates -->
+            <use xlink:href="#red_gate" transform="matrix(1 0 0 1 150 100)"/>
+            <use xlink:href="#red_gate" transform="matrix(1 0 0 1 575 100)"/>
+
+            <use xlink:href="#blue_gate" transform="matrix(1 0 0 1 280 300)"/>
+            <use xlink:href="#blue_gate" transform="matrix(1 0 0 1 600 300)"/>
+
+            <use xlink:href="#red_gate" transform="matrix(1 0 0 1 220 500)"/>
+            <use xlink:href="#red_gate" transform="matrix(1 0 0 1 580 500)"/>
+
+            <use xlink:href="#blue_gate" transform="matrix(1 0 0 1 120 700)"/>
+            <use xlink:href="#blue_gate" transform="matrix(1 0 0 1 500 700)"/>
+
+            <use xlink:href="#red_gate" transform="matrix(1 0 0 1 250 900)"/>
+            <use xlink:href="#red_gate" transform="matrix(1 0 0 1 560 900)"/>
+
+            <use xlink:href="#blue_gate" transform="matrix(1 0 0 1 200 1100)"/>
+            <use xlink:href="#blue_gate" transform="matrix(1 0 0 1 560 1100)"/>
+
+            <use xlink:href="#red_gate" transform="matrix(1 0 0 1 100 1300)"/>
+            <use xlink:href="#red_gate" transform="matrix(1 0 0 1 500 1300)"/>
+
+            <use xlink:href="#blue_gate" transform="matrix(1 0 0 1 150 1500)"/>
+            <use xlink:href="#blue_gate" transform="matrix(1 0 0 1 560 1500)"/>
+
+            <use xlink:href="#red_gate" transform="matrix(1 0 0 1 250 1700)"/>
+            <use xlink:href="#red_gate" transform="matrix(1 0 0 1 600 1700)"/>
+        </g>
+        <animate id="begin3rdScene" attributeName="opacity" from="0" to="1" dur="4s" begin="end2ndScene.end" fill="freeze"/>
+        <animate attributeName="opacity" from="1" to="0" dur="4s" begin="descente2.end" fill="freeze"/>
+    </g>
+
+    
+    <g id="lastScene" opacity="0">
+        <g>
+            <use xlink:href="#snowPermanent"/>
+            <use xlink:href="#skyRace" />
+            <use xlink:href="#SkyColor" />
+            <use xlink:href="#Arrivalline"  transform="translate(130, 180)"/>
+            <use xlink:href="#skierBroken"  transform="matrix(0.75 0 0 0.75 180 107)"/>
+            <use xlink:href="#skier"  transform="matrix(0.75 0 0 0.75 280 57)"/>
+            <use xlink:href="#skierBroken2"  transform="matrix(-0.75 0 0 0.75 380 132)"/>
+       </g>
+            <animate id="fondu2" attributeName="opacity" from="0" to="1" dur="4s" begin="traveling.end" fill="freeze"/>
+    </g>
+    
+
+</defs>       
+
+        <use xlink:href="#firstScene"/>
+        <use xlink:href="#SecondScene"/>
+        <use xlink:href="#scene1"/>
+         <animate attributeName="viewBox" begin="end2ndScene.end" dur="9.5s" fill="freeze" values="0 0 750 500; 0 1750 750 500"/>
+        <animate id="traveling" attributeName="viewBox"  begin="descente2.end" dur="4s" fill="freeze" values="0 1750 750 500; 0 0 750 500"/>
+        <use xlink:href="#lastScene"/>
+    
+</svg>
